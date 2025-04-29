@@ -4,7 +4,7 @@ import { adminLogout } from "../store/slices/adminSlice";
 import toast from "react-hot-toast";
 
 export const adminApi = axios.create({
-    baseURL: import.meta.env.VITE_ADMIN_URL,
+    baseURL: import.meta.env.VITE_ADMIN_URL || "http://localhost:5000/api/v1/admin",
     withCredentials: true
 })
 

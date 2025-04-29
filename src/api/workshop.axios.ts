@@ -4,7 +4,7 @@ import { workshopLogout } from "../store/slices/workshopSlice";
 import toast from "react-hot-toast";
 
 export const workshopApi = axios.create({
-    baseURL: import.meta.env.VITE_WORKSHOP_URL,
+    baseURL: import.meta.env.VITE_WORKSHOP_URL || "http://localhost:5000/api/v1/workshop",
     withCredentials: true
 })
 
