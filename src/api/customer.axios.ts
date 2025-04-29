@@ -4,7 +4,7 @@ import { customerLogout } from '../store/slices/customerSlice';
 import toast from "react-hot-toast";
 
 export const customerApi = axios.create({
-	baseURL: import.meta.env.VITE_CUSTOMER_URL,
+	baseURL: import.meta.env.VITE_CUSTOMER_URL || 'http://localhost:5000/api/v1/customer',
 	withCredentials: true
 })
 
