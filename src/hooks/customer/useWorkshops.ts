@@ -41,7 +41,7 @@ export interface IReveiwSubmitData {
     workshopId: string
 }
 
-export const useWorkshopsQuery = <T extends WorkshopData>(
+export const useWorkshopsQuery = (
     page: number,
     limit: number,
     searchQuery: string,
