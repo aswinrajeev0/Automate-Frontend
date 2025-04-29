@@ -2,7 +2,7 @@ import React from "react"
 import { IReview } from "../../../hooks/customer/useWorkshops"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "../../ui/dropdown-menu"
 import { MoreVertical, Star, ThumbsUp } from "lucide-react"
-import { Button } from "../../ui/button"
+import { Button } from "../../ui/Button"
 // import { Badge } from "../../ui/Badge"
 import { Separator } from "../../ui/Separator"
 

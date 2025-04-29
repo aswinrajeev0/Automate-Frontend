@@ -3,7 +3,7 @@ import { MapPin } from "lucide-react";
 
 const LocationComponent: React.FC<{ handleLocationSelect: (address: string) => void }> = ({ handleLocationSelect }) => {
     const [location, setLocation] = useState<{ lat: number; lon: number }>({ lat: 0, lon: 0 });
-    const [error, setError] = useState<string | null>(null);
+    const [_error, setError] = useState<string | null>(null);
     const [locationString, setLocationString] = useState("");
 
     useEffect(() => {

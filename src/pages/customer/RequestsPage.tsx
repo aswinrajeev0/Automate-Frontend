@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Search, Calendar, Filter, ArrowUpDown } from 'lucide-react';
+import { Search } from 'lucide-react';
 import { Header } from '../../components/customer/Header';
 import { Footer } from '../../components/customer/Footer';
 import { useGetAllRequests } from '../../hooks/customer/useServiceRequests';

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Plus, Filter, Search } from 'lucide-react';
+import { Plus } from 'lucide-react';
 import { Header } from '../../components/customer/Header';
 import { Footer } from '../../components/customer/Footer';
 import { useGetWallet } from '../../hooks/customer/useWallet';

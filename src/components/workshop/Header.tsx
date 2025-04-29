@@ -1,5 +1,5 @@
 import React from "react"
-import { Bell, LogOut, Menu } from "lucide-react";
+import { LogOut, Menu } from "lucide-react";
 import { Button } from "../ui/Button";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store/store";

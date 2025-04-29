@@ -71,7 +71,7 @@ const CalenderSection: React.FC<CalenderSectionProps> = ({ setBookingSubmitted }
 
   const { data: _isSlotAvailableData, refetch: checkAvailability } = useCheckSlotAvailability(selectedSlot?._id || "");
 
-  const saveSlotId = useSaveSlotId();
+  useSaveSlotId();
 
   useEffect(() => {
     if (selectedDate) {

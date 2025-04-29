@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle, DialogClose } from "../../ui/Dialog";
 import { Textarea } from "../../ui/Textarea";
-import { Button } from "../../ui/button";
+import { Button } from "../../ui/Button";
 import { Star } from "lucide-react";
 import { IReview, useSubmitReview, WorkshopDetailsResponse } from "../../../hooks/customer/useWorkshops";
 import { useToaster } from "../../../hooks/ui/useToaster";

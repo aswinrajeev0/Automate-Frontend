@@ -4,9 +4,8 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import { workshopSignupSchema } from "../../utils/validations/workshopValidations/workshopSignupvalidator";
 import { User, Mail, Lock, Eye, EyeOff, Phone, MapPin, Building, Home, Globe } from "lucide-react";
 import { WorkshopRegisterData, type WorkshopSignupFormValues } from "../../types/auth";
-import { Button } from "../../components/ui/Button";
 import { useNavigate } from "react-router-dom";
-import { toast, useToast } from "../../hooks/ui/useToast";
+import { useToast } from "../../hooks/ui/useToast";
 import { useSendOtp, useVerifyOtp, useWorkshopRegister } from "../../hooks/workshop/useWorkshopAuth";
 import OTPModal from "../../components/modals/OtpModal";
 

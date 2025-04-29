@@ -1,4 +1,4 @@
-import { ArrowRight, MapPin, MessageCircle, Users, Wrench, Home } from "lucide-react";
+import { ArrowRight, MapPin, MessageCircle, Wrench, Home } from "lucide-react";
 import { Button } from "../../components/ui/Button";
 import { useNavigate } from "react-router-dom";
 import { Header } from "../../components/customer/Header"

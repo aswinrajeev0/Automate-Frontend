@@ -3,7 +3,7 @@
 import type React from "react"
 import { useEffect, useState } from "react"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "../../ui/Table"
-import { Button } from "../../ui/button"
+import { Button } from "../../ui/Button"
 import { Check, Eye, Search, X } from "lucide-react"
 import { Badge } from "../../ui/Badge"
 import { debounce } from "lodash"

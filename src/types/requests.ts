@@ -34,6 +34,7 @@ export interface IAllPendingRequests {
     requestId: string;
     vehicleNo: string;
     type: string;
+    createdAt: Date;
 }
 
 export interface IRequest {
@@ -61,6 +62,7 @@ export interface IJobs {
     requestId: string;
     vehicleNo: string;
     type: string;
+    createdAt?: Date;
 }
 
 export interface IUserRequestResponse {

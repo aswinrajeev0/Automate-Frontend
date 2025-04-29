@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { X, CreditCard, Wallet, Banknote } from 'lucide-react';
+import { X } from 'lucide-react';
 import { useCreateOrder, useVerifyPayment } from '../../../hooks/payment/useRazorPay';
 import { useAddMoney } from '../../../hooks/customer/useWallet';
 import { useToaster } from '../../../hooks/ui/useToaster';

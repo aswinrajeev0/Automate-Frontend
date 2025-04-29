@@ -3,7 +3,7 @@
 import type React from "react"
 import { useEffect, useState } from "react"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "../../ui/Table"
-import { Button } from "../../ui/button"
+import { Button } from "../../ui/Button"
 import { debounce } from "lodash"
 import { getAllWorkshops } from "../../../services/admin/adminService"
 import { useUpdateWorkshopStatusMutation } from "../../../hooks/admin/useUpdateWorkshopStatus"
