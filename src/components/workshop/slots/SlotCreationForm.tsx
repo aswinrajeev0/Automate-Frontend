@@ -109,6 +109,8 @@ const SlotCreationForm: React.FC<SlotCreationFormProps> = ({loading, setLoading,
                                 <input
                                     type="date"
                                     name="date"
+                                    min={new Date(Date.now() + 1 * 24 * 60 * 60 * 1000).toISOString().split("T")[0]}
+                                    max={new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString().split("T")[0]}
                                     value={formData.date}
                                     onChange={handleInputChange}
                                     className="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"

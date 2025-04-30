@@ -22,6 +22,15 @@ const BookingCard: React.FC<{ booking: ICustomerBooking }> = ({ booking }) => {
         }
     }
 
+    const today = new Date();
+    const bookingDate = new Date(booking.date);
+
+    const displayStatus =
+        (booking.status === 'confirmed' || booking.status === 'pending') &&
+            today > bookingDate
+            ? 'completed'
+            : booking.status;
+
     const getStatusBadge = (status: ICustomerBooking['status']) => {
         switch (status) {
             case 'confirmed':
@@ -44,7 +53,7 @@ const BookingCard: React.FC<{ booking: ICustomerBooking }> = ({ booking }) => {
                         <p className="text-gray-700 text-sm">{booking.workshop}</p>
                     </div>
                     <div>
-                        {getStatusBadge(booking.status)}
+                        {getStatusBadge(displayStatus)}
                     </div>
                 </div>
 
@@ -90,7 +99,7 @@ const BookingCard: React.FC<{ booking: ICustomerBooking }> = ({ booking }) => {
                 </div>
 
                 <div className="mt-auto">
-                    {booking.status === 'pending' || booking.status === 'confirmed' ? (
+                    {displayStatus === 'pending' || displayStatus === 'confirmed' ? (
                         <button
                             onClick={() => setOpenCancelModal(true)}
                             className="w-full border border-red-500 bg-white text-red-500 rounded py-2 text-sm font-medium hover:bg-red-50 transition-colors"
