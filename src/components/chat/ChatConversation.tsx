@@ -67,7 +67,7 @@ const ChatConversation = ({
     }, [conversation._id]);
 
     useEffect(() => {
-        const recipientId = userType === "customer" ? conversation.workshopId : conversation.customerId;
+        const recipientId = userType === "customer" ? conversation.workshopId._id : conversation.customerId._id;
 
         console.log("Received onlineStatus:", conversation);
         const handleOnlineStatus = (data: { id: string; online: boolean }) => {
@@ -149,16 +149,33 @@ const ChatConversation = ({
         ? conversation.workshopName
         : conversation.customerName;
 
+    const displayName =
+        userType === "customer"
+            ? conversation.workshopName
+            : conversation.customerName;
+
+    const initial = displayName.charAt(0).toUpperCase();
+
     return (
         <div className="flex-1 flex flex-col max-h-140">
             {/* Chat header */}
             <div className="px-6 py-3 border-b border-gray-200 flex items-center">
-                <div className={cn(
-                    "h-10 w-10 rounded-full flex items-center justify-center text-white mr-3",
-                    userType === "customer" ? "bg-orange-500" : "bg-blue-500"
-                )}>
-                    {recipientName.charAt(0).toUpperCase()}
-                </div>
+                {(userType === "customer" ? conversation.workshopId?.image : conversation.customerId?.image) ? (
+                    <img
+                        src={userType === "customer" ? conversation.workshopId.image : conversation.customerId.image}
+                        alt="Profile"
+                        className="h-10 w-10 rounded-full object-cover mr-3"
+                    />
+                ) : (
+                    <div
+                        className={cn(
+                            "h-10 w-10 rounded-full flex items-center justify-center text-white mr-3",
+                            userType === "customer" ? "bg-orange-500" : "bg-blue-500"
+                        )}
+                    >
+                        {initial}
+                    </div>
+                )}
                 <div>
                     <h2 className="font-medium text-gray-900">{recipientName}</h2>
                     <p className="text-xs text-gray-500 flex items-center gap-2">

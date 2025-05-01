@@ -9,9 +9,15 @@ export interface IMessageType {
 
 export interface IConversationType {
     _id: string;
-    customerId: string;
+    customerId: {
+        _id: string;
+        image: string;
+    };
     customerName: string;
-    workshopId: string;
+    workshopId: {
+        _id: string;
+        image: string;
+    };
     workshopName: string;
     latestMessage: {
         content: string;

@@ -59,7 +59,7 @@ const ChatInterface = ({ userType }: ChatInterfaceProps) => {
             hasStartedRef.current = true;
 
             const existingConversation = (fetchConversationData?.conversations as IConversationType[]).find(
-                (conv) => conv.workshopId === workshopIdFromQuery
+                (conv) => conv.workshopId._id === workshopIdFromQuery
             );
 
             if (existingConversation) {

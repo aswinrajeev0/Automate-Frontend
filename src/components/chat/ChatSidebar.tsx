@@ -63,14 +63,22 @@ const ChatSidebar = ({
                                 )}
                             >
                                 <div className="flex items-center">
-                                    <div
-                                        className={cn(
-                                            "h-10 w-10 rounded-full flex items-center justify-center text-white mr-3",
-                                            userType === "customer" ? "bg-orange-500" : "bg-blue-500"
-                                        )}
-                                    >
-                                        {initial}
-                                    </div>
+                                    {(userType === "customer" ? conversation.workshopId?.image : conversation.customerId?.image) ? (
+                                        <img
+                                            src={userType === "customer" ? conversation.workshopId.image : conversation.customerId.image}
+                                            alt="Profile"
+                                            className="h-10 w-10 rounded-full object-cover mr-3"
+                                        />
+                                    ) : (
+                                        <div
+                                            className={cn(
+                                                "h-10 w-10 rounded-full flex items-center justify-center text-white mr-3",
+                                                userType === "customer" ? "bg-orange-500" : "bg-blue-500"
+                                            )}
+                                        >
+                                            {initial}
+                                        </div>
+                                    )}
                                     <div className="flex-1 min-w-0">
                                         <div className="flex justify-between items-center">
                                             <p className="font-medium text-gray-900 truncate">
