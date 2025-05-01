@@ -10,7 +10,7 @@ const UserBookingsPage: React.FC = () => {
     const [currentPage, setCurrentPage] = useState(1)
     
     // Increased limit to show more bookings per page
-    const limit = 5
+    const limit = 6
 
     const { data, isLoading, isError } = useAllUserBookings(currentPage, limit)
     const bookings = (data?.bookings || []) as ICustomerBooking[];

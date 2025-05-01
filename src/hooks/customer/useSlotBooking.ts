@@ -107,7 +107,7 @@ export const useIsSlotAvailable = (data: { date: Date; time: string, endTime: st
 
 export const useAllUserBookings = (page: number = 1, limit: number = 10) => {
     return useQuery({
-        queryKey: ["use-bookings"],
+        queryKey: ["use-bookings", page, limit],
         queryFn: () => allUserBookings(page, limit)
     })
 }
