@@ -3,6 +3,7 @@ import { Card, CardContent } from "../../ui/Card";
 import { AlertCircle, Filter, Heart, MapPin, Star } from "lucide-react";
 import { IWorkshopWithRating } from "../../../types/workshop.type";
 import { useFavoriteWorkshopIds, useHandelFavorite } from "../../../hooks/customer/useWorkshops";
+import mechsPng from "../../../assets/mechs.jpg"
 
 interface WorkshopDisplaySectionProps {
     filteredWorkshops: IWorkshopWithRating[];
@@ -78,7 +79,7 @@ const WorkshopDisplaySection: React.FC<WorkshopDisplaySectionProps> = ({
                             <Card key={workshop.workshopId} className="overflow-hidden hover:shadow-md transition-shadow group">
                                 <div className="relative h-44">
                                     <img
-                                        src={workshop.image || "./mechs.jpg"}
+                                        src={workshop.image || mechsPng}
                                         alt={workshop.name}
                                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                                     // onError={handleImageError}

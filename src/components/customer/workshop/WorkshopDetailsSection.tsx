@@ -5,6 +5,7 @@ import { IWorkshop, useHandelFavorite, useIsFavorite } from "../../../hooks/cust
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../../ui/Tooltip";
 import { useNavigate } from "react-router-dom";
 import { useToaster } from "../../../hooks/ui/useToaster";
+import fallackImage from "../../../assets/mechs.jpg"
 
 interface WorkshopDetailsSectionProps {
     workshop: IWorkshop
@@ -54,7 +55,7 @@ const WorkshopDetailsSection: React.FC<WorkshopDetailsSectionProps> = ({ worksho
                 <div className="space-y-4">
                     <div className="relative group overflow-hidden rounded-lg">
                         <img
-                            src={workshop?.image ? workshop?.image : "/mechs2.jpg"}
+                            src={workshop?.image ? workshop?.image : fallackImage}
                             alt={workshop?.name}
                             className="w-full h-auto object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
                             style={{ maxHeight: '450px' }}

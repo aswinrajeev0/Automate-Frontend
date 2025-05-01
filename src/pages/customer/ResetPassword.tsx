@@ -6,6 +6,7 @@ import { useNavigate, Link, useSearchParams } from "react-router-dom";
 import { useToast } from "../../hooks/ui/useToast";
 import { ResetPasswordFormValues, ResetPasswordFormData } from "../../types/auth";
 import { useResetPassword } from "../../hooks/customer/useCustomerAuth";
+import mechs2Png from "../../assets/mechs2.jpg"
 
 export default function ResetPasswordPage() {
     const [showPassword, setShowPassword] = useState<boolean>(false);
@@ -87,7 +88,7 @@ export default function ResetPasswordPage() {
             {/* Left side with illustration - 1/2 of the page */}
             <div className="hidden md:flex md:w-1/2 bg-blend-color items-center justify-center p-8">
                 <img
-                    src="./mechs2.jpg"
+                    src={mechs2Png}
                     alt="Auto mechanics working on a car"
                     className="object-contain w-full max-w-lg h-full"
                 />

@@ -3,6 +3,7 @@ import { X } from 'lucide-react';
 import { useCreateOrder, useVerifyPayment } from '../../../hooks/payment/useRazorPay';
 import { useAddMoney } from '../../../hooks/customer/useWallet';
 import { useToaster } from '../../../hooks/ui/useToaster';
+import logo from "../../../assets/logo.png";
 
 interface AddMoneyModalProps {
     isOpen: boolean;
@@ -36,7 +37,7 @@ const AddMoneyModal: React.FC<AddMoneyModalProps> = ({ isOpen, onClose }) => {
                 currency: 'INR',
                 name: 'Automate',
                 description: `Adding money to wallet`,
-                image: '/logo.png',
+                image: logo,
                 order_id: order.id,
                 handler: async (response: any) => {
                     const verifyRes = await verifyPayment.mutateAsync({

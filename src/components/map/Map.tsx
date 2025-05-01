@@ -16,21 +16,24 @@ import {
     DialogTitle,
     DialogTrigger,
     DialogFooter,
-} from "../ui/Dialog"
-import { Loader2, MapPin, Car } from "lucide-react"
-import axios from "axios"
+} from "../ui/Dialog";
+import { Loader2, MapPin, Car } from "lucide-react";
+import axios from "axios";
+import markerPng from "../../assets/marker.png";
+import workshopMarkerPng from "../../assets/workshop-marker-2.png";
+import currentLocationMarkerPng from "../../assets/current-location.png";
 
 delete (L.Icon.Default.prototype as any)._getIconUrl
 L.Icon.Default.mergeOptions({
     // iconRetinaUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png",
-    iconRetinaUrl: "./marker.png",
-    iconUrl: "./marker.png",
+    iconRetinaUrl: markerPng,
+    iconUrl: markerPng,
     shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
 })
 
 // Custom icons
 const userIcon = new L.Icon({
-    iconUrl: "./marker.png",
+    iconUrl: markerPng,
     shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
     iconSize: [25, 41],
     iconAnchor: [12, 41],
@@ -40,7 +43,7 @@ const userIcon = new L.Icon({
 })
 
 const workshopIcon = new L.Icon({
-    iconUrl: "./workshop-marker-2.png",
+    iconUrl: workshopMarkerPng,
     shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
     iconSize: [25, 41],
     iconAnchor: [12, 41],
@@ -50,7 +53,7 @@ const workshopIcon = new L.Icon({
 })
 
 const currentLocationIcon = new L.Icon({
-    iconUrl: "./current-location.png",
+    iconUrl: currentLocationMarkerPng,
     shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
     iconSize: [25, 41],
     iconAnchor: [12, 41],

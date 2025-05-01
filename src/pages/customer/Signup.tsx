@@ -11,6 +11,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import { useToast } from "../../hooks/ui/useToast";
 import OTPModal from "../../components/modals/OtpModal";
+import mechs2 from "../../assets/mechs2.jpg"
 
 export default function SignupPage() {
   const [showPassword, setShowPassword] = useState<boolean>(false);
@@ -140,7 +141,7 @@ export default function SignupPage() {
       {/* Left side with illustration - now 1/2 of the page */}
       <div className="hidden md:flex md:w-1/2 bg-blend-color items-center justify-center p-8">
         <img
-          src="./mechs2.jpg"
+          src={mechs2}
           alt="Auto mechanics working on a car"
           className="object-contain w-full max-w-lg h-full"
         />

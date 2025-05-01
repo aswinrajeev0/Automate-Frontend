@@ -5,6 +5,8 @@ import { PayPalButtons } from "@paypal/react-paypal-js";
 import { RootState } from '../../../store/store';
 import { useToaster } from '../../../hooks/ui/useToaster';
 import { useWalletPurchase } from '../../../hooks/customer/useWallet';
+import logo from "../../../assets/logo.png";
+import razorPayIcon from "../../../assets/razorpay-icon.png";
 
 interface PaymentModalProps {
     isPaymentModalOpen: boolean;
@@ -87,7 +89,7 @@ const PaymentModal: React.FC<PaymentModalProps> = ({
                 currency: 'INR',
                 name: 'Automate',
                 description: `${bookingDetails.type} Service`,
-                image: '/logo.png',
+                image: logo,
                 order_id: order.id,
                 handler: async (response: any) => {
                     const verifyRes = await verifyPayment.mutateAsync({
@@ -216,7 +218,7 @@ const PaymentModal: React.FC<PaymentModalProps> = ({
                                 className="h-5 w-5 text-blue-600"
                             />
                             <span className="ml-3 flex-grow">RazorPay</span>
-                            <img src="/razorpay-icon.png" alt="RazorPay logo" className="w-15" />
+                            <img src={razorPayIcon} alt="RazorPay logo" className="w-15" />
                         </label>
                     </div>
 

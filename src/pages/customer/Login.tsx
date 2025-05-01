@@ -10,6 +10,7 @@ import { useDispatch } from "react-redux";
 import { customerLogin } from "../../store/slices/customerSlice";
 import { GoogleAuthButton } from "../../components/customer/GoogleSignnup";
 import { CredentialResponse } from "@react-oauth/google";
+import mechs2 from "../../assets/mechs2.jpg"
 
 export default function LoginPage() {
     const [showPassword, setShowPassword] = useState<boolean>(false);
@@ -197,7 +198,7 @@ export default function LoginPage() {
 
             <div className="hidden md:flex md:w-1/2 bg-blend-color items-center justify-center p-8">
                 <img
-                    src="./mechs2.jpg"
+                    src={mechs2}
                     alt="Auto mechanics working on a car"
                     className="object-contain w-full max-w-lg h-full"
                 />

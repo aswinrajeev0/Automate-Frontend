@@ -1,6 +1,9 @@
 import { ArrowRight, Car, Truck, Wrench } from "lucide-react";
 import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import carServiceJpg from "../../../assets/car-service.jpg"
+import carLiftJpg from "../../../assets/car-lift.jpg"
+import mobileWorkshopJpg from "../../../assets/mobile-workshop.jpg"
 
 const FeaturedServices: React.FC = () => {
 
@@ -12,7 +15,7 @@ const FeaturedServices: React.FC = () => {
             id: 1,
             title: "Request Service",
             description: "Book a comprehensive vehicle service with our expert mechanics",
-            image: "../car-service.jpg",
+            image: carServiceJpg,
             icon: <Wrench size={24} />,
             features: ["Full diagnostics", "Expert mechanics", "Transparent pricing"],
             cta: "Book Now",
@@ -22,7 +25,7 @@ const FeaturedServices: React.FC = () => {
             id: 2,
             title: "Car Lifting",
             description: "Professional car lifting services for maintenance and repairs",
-            image: "../car-lift.jpg",
+            image: carLiftJpg,
             icon: <Car size={24} />,
             features: ["Modern equipment", "Safety certified", "Any vehicle type"],
             cta: "Learn More",
@@ -32,7 +35,7 @@ const FeaturedServices: React.FC = () => {
             id: 3,
             title: "Mobile Workshop",
             description: "We come to you - roadside assistance and on-location repairs",
-            image: "../mobile-workshop.jpg",
+            image: mobileWorkshopJpg,
             icon: <Truck size={24} />,
             features: ["24/7 availability", "Fast response", "Fully-equipped vans"],
             cta: "Request Help",

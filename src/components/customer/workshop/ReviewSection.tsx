@@ -3,8 +3,8 @@ import { IReview } from "../../../hooks/customer/useWorkshops"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "../../ui/dropdown-menu"
 import { MoreVertical, Star, ThumbsUp } from "lucide-react"
 import { Button } from "../../ui/Button"
-// import { Badge } from "../../ui/Badge"
 import { Separator } from "../../ui/Separator"
+import mechs2Png from "../../../assets/mechs2.jpg"
 
 interface ReviewSectionProps {
     reviews: IReview[];
@@ -53,7 +53,7 @@ const ReviewSection: React.FC<ReviewSectionProps> = ({ reviews, setShowRatingDia
                 <div className="space-y-8">
                     {reviews.map((review) => {
                         const userName = typeof review.userId === "object" ? review.userId.name : "Anonymous User";
-                        const image = typeof review.userId === "object" ? review.userId.image : "./mechs2.jpg";
+                        const image = typeof review.userId === "object" ? review.userId.image : mechs2Png;
                         const date = review.createdAt
                             ? new Date(review.createdAt)
                             : null;

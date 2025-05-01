@@ -2,13 +2,15 @@ import L, { LatLngExpression } from "leaflet";
 import { GeoSearchControl, OpenStreetMapProvider } from "leaflet-geosearch";
 import React, { useEffect, useState } from "react";
 import { MapContainer, Marker, Popup, TileLayer, useMapEvents } from "react-leaflet";
+import currentLocationPng1 from "../../../assets/current-location1.png";
+import markerPng from "../../../assets/marker.png";
 
 interface MapSelectionProps {
     handleLocationSelect: (address: string) => void
 }
 delete (L.Icon.Default.prototype as any)._getIconUrl
 const currentLocationIcon = new L.Icon({
-    iconUrl: "/current-location1.png",
+    iconUrl: currentLocationPng1,
     shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
     iconSize: [25, 41],
     iconAnchor: [12, 41],
@@ -18,7 +20,7 @@ const currentLocationIcon = new L.Icon({
 })
 
 const userIcon = new L.Icon({
-    iconUrl: "/marker.png",
+    iconUrl: markerPng,
     shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
     iconSize: [25, 41],
     iconAnchor: [12, 41],

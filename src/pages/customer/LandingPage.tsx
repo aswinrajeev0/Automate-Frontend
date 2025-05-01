@@ -9,6 +9,7 @@ import WorkshopCard from "../../components/customer/workshop/WorkshopCard";
 import { useEffect, useRef, useState } from "react";
 import MapModal from "../../components/map/Map";
 import { useFavoriteWorkshopIds } from "../../hooks/customer/useWorkshops";
+import banner from "../../assets/banner.png";
 
 export default function LandingPage() {
     const navigate = useNavigate();
@@ -44,7 +45,7 @@ export default function LandingPage() {
             <Header />
 
             <section className="relative">
-                <img src="./banner.png" alt="" />
+                <img src={banner} alt="" />
             </section>
 
             {/* Navigation icons */}

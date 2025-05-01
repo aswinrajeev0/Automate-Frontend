@@ -4,6 +4,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { useAcceptRequest, useRejectRequest, useRequestDetails } from '../../../hooks/workshop/useWorkshopRequests';
 import { IRequest } from '../../../types/requests';
 import { useToaster } from '../../../hooks/ui/useToaster';
+import carPlaceHolderImage from "../../../assets/car-placeholder.jpg"
 
 const RequestDetailsPage: React.FC = () => {
     const [_showConfirmation, setShowConfirmation] = useState(false);
@@ -91,7 +92,7 @@ const RequestDetailsPage: React.FC = () => {
                     <div className="space-y-6">
                         <div className="rounded-lg overflow-hidden border border-gray-200">
                             <img
-                                src={requestDetails?.image || "/car-placeholder.jpg"}
+                                src={requestDetails?.image || carPlaceHolderImage}
                                 alt="Vehicle"
                                 className="w-full h-64 object-cover"
                             />

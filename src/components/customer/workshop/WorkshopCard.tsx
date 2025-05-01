@@ -4,6 +4,7 @@ import { IFeaturedWorkshop } from "../../../hooks/customer/useFeaturedWorkshop";
 import { Heart } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useHandelFavorite } from "../../../hooks/customer/useWorkshops";
+import fallBackImage from "../../../assets/mechs.jpg"
 
 interface WorkshopCardProps {
     workshop: IFeaturedWorkshop;
@@ -26,7 +27,7 @@ const WorkshopCard: React.FC<WorkshopCardProps> = ({ workshop, isFavorite, onTog
         <Card key={workshop.workshopId} onClick={() => navigate(`/workshop-details/${workshop._id}`)} className="overflow-hidden border-none shadow-lg rounded-lg cursor-pointer">
             <div className="relative h-48">
                 <img
-                    src={workshop.image ? workshop.image : "./mechs.jpg"}
+                    src={workshop.image ? workshop.image : fallBackImage}
                     alt={workshop.name}
                     className="w-full h-full object-cover"
                 />
