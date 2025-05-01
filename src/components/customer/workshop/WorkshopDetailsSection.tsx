@@ -22,7 +22,7 @@ const WorkshopDetailsSection: React.FC<WorkshopDetailsSectionProps> = ({ worksho
 
     useEffect(() => {
         refetchFavoriteStatus().then((res) => {
-            setIsFavorite(res.data.isFavorite);
+            setIsFavorite(res.data?.isFavorite || false);
         });
     }, [workshop.id])
 
