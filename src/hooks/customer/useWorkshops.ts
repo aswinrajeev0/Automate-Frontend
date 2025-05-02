@@ -80,7 +80,7 @@ export const useHandelFavorite = (page?: number, limit?: number) => {
     })
 }
 
-export const useIsFavorite = (workshopId: string) => {
+export const useIsFavorite = (workshopId: string, enabled: boolean) => {
     return useQuery({
         queryKey: ["isFavorite", workshopId],
         queryFn: () => isFavorite(workshopId),
@@ -95,9 +95,10 @@ export const useFavorites = (page: number, limit: number) => {
     })
 }
 
-export const useFavoriteWorkshopIds = () => {
+export const useFavoriteWorkshopIds = (enabled: boolean) => {
     return useQuery({
         queryKey: ["workshopIds"],
-        queryFn: favoriteWorkshopIds
+        queryFn: favoriteWorkshopIds,
+        enabled
     })
 }

@@ -6,6 +6,8 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../../
 import { useNavigate } from "react-router-dom";
 import { useToaster } from "../../../hooks/ui/useToaster";
 import fallackImage from "../../../assets/mechs.jpg"
+import { useSelector } from "react-redux";
+import { RootState } from "../../../store/store";
 
 interface WorkshopDetailsSectionProps {
     workshop: IWorkshop
@@ -19,13 +21,17 @@ const WorkshopDetailsSection: React.FC<WorkshopDetailsSectionProps> = ({ worksho
 
     const navigate = useNavigate()
 
-    const { refetch: refetchFavoriteStatus } = useIsFavorite(workshop.id);
+    const { customer } = useSelector((state: RootState) => state.customer)
+
+    const { refetch: refetchFavoriteStatus } = useIsFavorite(workshop.id, !!customer);
 
     useEffect(() => {
-        refetchFavoriteStatus().then((res) => {
-            setIsFavorite(res.data?.isFavorite || false);
-        });
-    }, [workshop.id])
+        if (customer) {
+            refetchFavoriteStatus().then((res) => {
+                setIsFavorite(res.data?.isFavorite || false);
+            });
+        }
+    }, [workshop.id, customer])
 
 
     const handleFavoriteStatus = useHandelFavorite();

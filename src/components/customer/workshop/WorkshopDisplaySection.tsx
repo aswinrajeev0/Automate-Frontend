@@ -4,6 +4,8 @@ import { AlertCircle, Filter, Heart, MapPin, Star } from "lucide-react";
 import { IWorkshopWithRating } from "../../../types/workshop.type";
 import { useFavoriteWorkshopIds, useHandelFavorite } from "../../../hooks/customer/useWorkshops";
 import mechsPng from "../../../assets/mechs.jpg"
+import { useSelector } from "react-redux";
+import { RootState } from "../../../store/store";
 
 interface WorkshopDisplaySectionProps {
     filteredWorkshops: IWorkshopWithRating[];
@@ -20,14 +22,17 @@ const WorkshopDisplaySection: React.FC<WorkshopDisplaySectionProps> = ({
 }) => {
 
     const [favoriteIds, setFavoriteIds] = useState<string[]>([]);
+    const { customer } = useSelector((state: RootState) => state.customer);
 
-    const { refetch } = useFavoriteWorkshopIds();
+    const { refetch } = useFavoriteWorkshopIds(!!customer);
 
     useEffect(() => {
-        refetch().then((response) => {
-            setFavoriteIds(response.data?.favoriteWorkshopIds || [])
-        })
-    }, [])
+        if (customer) {
+            refetch().then((response) => {
+                setFavoriteIds(response.data?.favoriteWorkshopIds || [])
+            })
+        }
+    }, [customer, refetch]);
 
     const handleFavorite = useHandelFavorite()
 

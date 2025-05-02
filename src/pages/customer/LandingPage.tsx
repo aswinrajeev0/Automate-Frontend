@@ -11,10 +11,13 @@ import MapModal from "../../components/map/Map";
 import { useFavoriteWorkshopIds } from "../../hooks/customer/useWorkshops";
 import banner from "../../assets/banner.png";
 import mechs2 from "../../assets/mechs2.jpg";
+import { useSelector } from "react-redux";
+import { RootState } from "../../store/store";
 
 export default function LandingPage() {
     const navigate = useNavigate();
     const mapModalButtonRef = useRef<HTMLButtonElement>(null);
+    const {customer} = useSelector((state: RootState) => state.customer);
 
     const { data, isLoading, isError } = useFeaturedWorkshopsQuery(getFeaturedWorkshops);
 
@@ -22,13 +25,15 @@ export default function LandingPage() {
 
     const [favoriteIds, setFavoriteIds] = useState<string[]>([]);
 
-    const { refetch } = useFavoriteWorkshopIds();
+    const { refetch } = useFavoriteWorkshopIds(!!customer);
 
     useEffect(() => {
-        refetch().then((response) => {
-            setFavoriteIds(response.data?.favoriteWorkshopIds || [])
-        })
-    }, [])
+        if (customer) {
+            refetch().then((response) => {
+                setFavoriteIds(response.data?.favoriteWorkshopIds || []);
+            });
+        }
+    }, [customer, refetch])
 
     const handleNearbyClick = () => {
         if (mapModalButtonRef.current) {

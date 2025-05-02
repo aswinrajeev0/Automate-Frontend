@@ -48,8 +48,8 @@ const ChatConversation = ({
     };
 
     useEffect(() => {
-        const currentUserId = userType === "customer" ? conversation.customerId : conversation.workshopId;
-        const recipientId = userType === "customer" ? conversation.workshopId : conversation.customerId;
+        const currentUserId = userType === "customer" ? conversation.customerId._id : conversation.workshopId._id;
+        const recipientId = userType === "customer" ? conversation.workshopId._id : conversation.customerId._id;
 
         socket.emit("joinRoom", conversation._id, currentUserId);
         socket.emit("checkOnlineStatus", recipientId);
