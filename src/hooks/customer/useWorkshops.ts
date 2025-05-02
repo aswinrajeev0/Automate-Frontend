@@ -99,6 +99,6 @@ export const useFavoriteWorkshopIds = (enabled: boolean) => {
     return useQuery({
         queryKey: ["workshopIds"],
         queryFn: favoriteWorkshopIds,
-        enabled
+        enabled: false
     })
 }

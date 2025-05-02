@@ -4,7 +4,7 @@ import { CustomerRoutes } from "./routes/CustomerRoute";
 import { AdminRoutes } from "./routes/AdminRoute";
 import { WorkshopRoutes } from "./routes/WorkshopRoute";
 import NotFound from "./pages/NotFound";
-import ScrollToTop from "./utils/scrollToTop";
+import ScrollToTop from "./utils/ScrollToTop";
 function App() {
 
   return (
