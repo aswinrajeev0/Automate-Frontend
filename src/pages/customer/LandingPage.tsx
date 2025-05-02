@@ -10,6 +10,7 @@ import { useEffect, useRef, useState } from "react";
 import MapModal from "../../components/map/Map";
 import { useFavoriteWorkshopIds } from "../../hooks/customer/useWorkshops";
 import banner from "../../assets/banner.png";
+import mechs2 from "../../assets/mechs2.jpg";
 
 export default function LandingPage() {
     const navigate = useNavigate();
@@ -131,7 +132,7 @@ export default function LandingPage() {
                     <div className="flex flex-col md:flex-row items-center justify-between gap-8">
                         <div className="md:w-1/2">
                             <img
-                                src="./mechs2.jpg"
+                                src={mechs2}
                                 alt="Car service illustration"
                                 className="w-full max-w-lg mx-auto"
                             />
