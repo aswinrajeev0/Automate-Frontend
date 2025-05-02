@@ -73,9 +73,9 @@ export const useSubmitReview = () => {
 export const useHandelFavorite = (page?: number, limit?: number) => {
     const queryClient = useQueryClient();
     return useMutation({
-        mutationFn: ({workshopId, status}: {workshopId: string, status: boolean}) => handleFavorite(workshopId, status),
+        mutationFn: ({ workshopId, status }: { workshopId: string, status: boolean }) => handleFavorite(workshopId, status),
         onSuccess: () => {
-            queryClient.invalidateQueries({queryKey: ["favorites",page, limit]})
+            queryClient.invalidateQueries({ queryKey: ["favorites", page, limit] })
         }
     })
 }
@@ -84,13 +84,13 @@ export const useIsFavorite = (workshopId: string, enabled: boolean) => {
     return useQuery({
         queryKey: ["isFavorite", workshopId],
         queryFn: () => isFavorite(workshopId),
-        enabled: false
+        enabled
     })
 }
 
 export const useFavorites = (page: number, limit: number) => {
     return useQuery({
-        queryKey: ["favorites",page, limit],
+        queryKey: ["favorites", page, limit],
         queryFn: () => favorites(page, limit)
     })
 }
