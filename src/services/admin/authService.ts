@@ -7,7 +7,7 @@ export const adminLogin = async (data: AdminLoginData) => {
         return response
     } catch (error: any) {
         console.log(error)
-        throw error.response.data;
+        throw error.response?.data;
     }
 }
 
@@ -17,6 +17,6 @@ export const adminLogout = async () => {
         return response.data
     } catch (error: any) {
         console.error(error)
-        throw error.response.data
+        throw error.response?.data
     }
 }

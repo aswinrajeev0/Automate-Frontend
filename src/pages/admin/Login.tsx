@@ -35,7 +35,7 @@ export default function AdminLoginPage() {
           description: "You have successfully logged in",
         });
 
-        dispatch(adminLogin(response.data))
+        dispatch(adminLogin(response?.data))
         navigate("/admin")
       }
 
