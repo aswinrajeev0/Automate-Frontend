@@ -46,15 +46,14 @@ export default function AdminLoginPage() {
                 description: "You have successfully logged in as an administrator",
             });
 
-            // Navigate to admin dashboard (will need to be created later)
             navigate("/admin");
         } catch (error: any) {
+            console.error("Admin login error:", error);
             toast({
                 title: "Access Denied",
                 description: error?.message || "Invalid admin credentials",
                 variant: "destructive",
             });
-            console.error("Admin login error:", error);
         } finally {
             setIsLoading(false);
         }
