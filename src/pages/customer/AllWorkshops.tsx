@@ -20,6 +20,8 @@ const WorkshopsPage = () => {
     const [locationFilter, setLocationFilter] = useState<string>("all")
     const [sortOption, setSortOption] = useState<SortOptionType>("all")
     const [currentPage, setCurrentPage] = useState<number>(1)
+    const [allWorkshops, setAllWorkshops] = useState<IWorkshopWithRating[]>([]);
+    const [filteredWorkshops, setFilteredWorkshops] = useState<IWorkshopWithRating[]>([]);
     const [isLoading] = useState<boolean>(false)
     const [isError] = useState<boolean>(false)
 
@@ -38,11 +40,27 @@ const WorkshopsPage = () => {
     )
 
     useEffect(() => {
+        setAllWorkshops(workshops);
+    }, [data])
+
+    useEffect(() => {
         debouncedSearch(searchQuery)
         return () => {
             debouncedSearch.cancel()
         }
     }, [searchQuery, debouncedSearch])
+
+    useEffect(() => {
+        const filtered = allWorkshops.filter(workshop => {
+            if (locationFilter === "all") {
+                return workshop
+            } else{
+                return workshop.city === locationFilter;
+            }
+        }
+        );
+        setFilteredWorkshops(filtered);
+    }, [locationFilter, allWorkshops]);
 
     const locations = [...new Set(workshops.map((workshop) => workshop.city))]
 
@@ -150,7 +168,7 @@ const WorkshopsPage = () => {
 
                     {/* Results Count */}
                     <WorkshopDisplaySection
-                        filteredWorkshops={workshops}
+                        filteredWorkshops={filteredWorkshops}
                         sortOption={sortOption}
                         locationFilter={locationFilter}
                         searchQuery={searchQuery}
